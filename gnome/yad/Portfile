@@ -1,0 +1,32 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           github      1.0
+
+github.setup        v1cont yad 13.0 v
+github.tarball_from releases
+
+name                yad
+version             13.0
+revision            0
+categories          gnome
+platforms           darwin
+license             GPL-3
+maintainers         {@ajacocks mac.com:jjacocks}
+description         Alternative GTK+ dialog boxes command line tool
+long_description    Yad allows you to display GTK+ dialog boxes from command line or shell scripts
+
+distfiles           ${github.project}-${github.version}.tar.xz
+checksums           rmd160  66e4f16255e98627cac2b3ba1f4386740416e6bd \
+                    sha256  194198c4a58e20ceffd9a3206633c3726d962d7d4219edb77aeb748897403e34 \
+                    size    298092
+
+depends_lib         port:intltool \
+                    port:webkit2-gtk \
+                    port:gtksourceview4 \
+                    port:gspell
+
+configure.args      --enable-html \
+                    --enable-tools \
+                    --enable-icon-browser \
+                    --enable-standalone

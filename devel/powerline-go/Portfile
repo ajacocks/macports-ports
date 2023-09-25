@@ -1,0 +1,69 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           golang 1.0
+
+go.setup            github.com/justjanne/powerline-go 1.24 v
+github.setup        justjanne powerline-go v1.24
+#github.tarball_from tag
+revision            0
+
+description         A Powerline style prompt for your shell
+
+long_description    A Powerline like prompt for Bash, ZSH and Fish. Based on \
+                    Powerline-Shell by @banga. Ported to golang by @justjanne.
+
+categories          devel
+installs_libs       no
+license             GPL-3+
+maintainers         maintainers         {@ajacocks mac.com:jjacocks}
+
+destroot {
+    xinstall -m 0755 ${worksrcpath}/${name} ${destroot}${prefix}/bin/
+}
+
+checksums           ${distname}${extract.suffix} \
+                        rmd160  fa5590393ec504c826afb06bc20d032115fbea7d \
+                        sha256  745390b453a22e1ef48eb96882654b5f8f3744ed3844a8ca38973314505102fa \
+                        size    141175
+
+go.vendors          gopkg.in/yaml.v2 \
+                        lock    v2.4.0 \
+                        rmd160  66e9feb7944b3804efa63155ed9b618717b8955c \
+                        sha256  72812077e7f20278003de6ab0d85053d89131d64c443f39115a022114fd032b6 \
+                        size    73231 \
+                    golang.org/x/text \
+                        lock    v0.3.8 \
+                        rmd160  eaf5f28f77fc34e60cf91f0867b04159ce0179be \
+                        sha256  67639a6efb18ef809a1662ff10d369f98b203f2cd23b3dfa6fc7cf3852bbd633 \
+                        size    8360441 \
+                    golang.org/x/term \
+                        lock    03fcf44c2211 \
+                        rmd160  a1b9592e95373ba617ef579a2f7015cfdc871343 \
+                        sha256  3673415a6d3d106d49b487715e151fc64245502ef547c16e8e13edb6b8f2f492 \
+                        size    14975 \
+                    golang.org/x/sys \
+                        lock    8c9f86f7a55f \
+                        rmd160  b71df2dedbfd04a9aecaee5e6a3351b621322114 \
+                        sha256  2c2126ac6c857ea6f3a2be1daa859c7e1b1252b946445836a86545ff60f83055 \
+                        size    1337107 \
+                    gopkg.in/ini.v1 \
+                        lock    v1.66.4 \
+                        rmd160  a03f51c928405d6f87ee1b853f1079eee7c9daac \
+                        sha256  1db7c426199e23a2980bbc1dd62b25f1fe494484d716111f9559c11210eaafb1 \
+                        size    53336 \
+                    github.com/mattn/go-runewidth \
+                        lock    v0.0.9 \
+                        rmd160  412c0e508e55f4fe437be0f71d7d22eca2b4366f \
+                        sha256  4f0f4a22257ccecfb6beae88052d850380ecc0e806d6bcc92d3656ebcac3b638 \
+                        size    16716 \
+                    github.com/shirou/gopsutil \
+                        lock    v3.22.3 \
+                        rmd160  c7f394359ea79c9ca25a161efbd9659f5a4ba458 \
+                        sha256  7a5abdf95a8c7165fbe3d099e666014e56e0822a14af2b096029560b7be46469 \
+                        size    168159 \
+                    github.com/tklauser/go-sysconf \
+                        lock    v0.3.10 \
+                        rmd160  f9bd0834e38ddf53df38e4a2fc8711e32c6547bb \
+                        sha256  c9aacbbb0aea49b21b1b689c59257cde1e655a9fee012f2524c2b62b7d54c6dd \
+                        size    29798
